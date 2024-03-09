@@ -5,6 +5,7 @@ import Encoder.Encoder;
 
 public class Main {
 
+    // Function to print Menu
     private void getMenu() {
         System.out.println("--Menu--");
         System.out.println("1. Encode");
@@ -17,7 +18,10 @@ public class Main {
         Main main = new Main();
         Scanner scanner = new Scanner(System.in);
         Encoder encoder = new Encoder();
+        String offSetError = "Invalid offset. Please try again\n";
 
+        whileloop:
+        // Loop for Menu
         while (true) {
             main.getMenu();
             String option = scanner.nextLine();
@@ -29,10 +33,23 @@ public class Main {
                     String plainText = scanner.nextLine().toUpperCase();
                     System.out.println("Enter OffSet: ");
                     String input = scanner.nextLine().toUpperCase();
-                    char offSet = input.charAt(0);
-                    String encodedText = encoder.encode(plainText, offSet);
-                    System.out.println("\nThe encoded text is: " + encodedText + "\n");
+                    try {
+                        char offSet = input.charAt(0);
+                        String encodedText = encoder.encode(plainText, offSet);
+                        if (encodedText != offSetError) {
+                            System.out.println("\nThe encoded text is: " + encodedText + "\n");
+                        } else {
+                            System.out.println(encodedText + "\n");
+                        }
+                    } catch (Exception e) {
+                        System.out.println(e);
+                        System.out.println("Invalid input. Please check again\n");
+                    }
                     break;
+
+                case "3":
+                    System.out.println("Exiting program.\n");
+                    break whileloop;
 
                 default:
                     System.out.println("Invalid Option\n");
