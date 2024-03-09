@@ -2,12 +2,9 @@ package Encoder;
 
 class Encoder extends ReferenceTable {
 
-    String plainText = "";
-    char offSetChar = ' ';
+    private String encodedText = "";
 
     public String encode(String plainText, char offSetChar) {
-        this.plainText = plainText;
-        this.offSetChar = offSetChar;
 
         // Get Index of Char from reference table to use as offset
         Integer offSetIndex = getIndex(offSetChar);
@@ -32,7 +29,11 @@ class Encoder extends ReferenceTable {
                 encodedText.append(' ');
             }
         }
+        this.encodedText = encodedText.toString();
         return encodedText.toString();
+    }
 
+    public String getPrevEncoded() {
+        return encodedText;
     }
 }
