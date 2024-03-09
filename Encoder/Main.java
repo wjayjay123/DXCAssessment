@@ -17,7 +17,6 @@ public class Main {
         Main main = new Main();
         Scanner scanner = new Scanner(System.in);
         Encoder encoder = new Encoder();
-        encoder.test();
 
         while (true) {
             main.getMenu();
