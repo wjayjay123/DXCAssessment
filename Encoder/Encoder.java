@@ -11,6 +11,9 @@ class Encoder extends ReferenceTable {
 
         // Get Index of Char from reference table to use as offset
         Integer offSetIndex = getIndex(offSetChar);
+        if (offSetIndex == -1) {
+            return "Invalid offset. Please try again\n";
+        }
 
         // Initialize StringBuilder
         StringBuilder encodedText = new StringBuilder();
