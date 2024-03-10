@@ -25,9 +25,9 @@ public class Decoder extends ReferenceTable {
                 index = (index + offSetIndex) % getLength();
                 // Append character to encoded string
                 decodedText.append(getChar(index));
-            } else if (chars == ' ') {
-                // Append space
-                decodedText.append(' ');
+            } else{
+                //Append unrecognised character 
+                decodedText.append(chars);
             }
         }
         return decodedText.toString();

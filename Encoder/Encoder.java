@@ -24,9 +24,9 @@ class Encoder extends ReferenceTable {
                 index = (index - offSetIndex + getLength()) % getLength();
                 // Append character to encoded string
                 encodedText.append(getChar(index));
-            } else if (chars == ' ') {
-                // Append space
-                encodedText.append(' ');
+            } else {
+                //Append unrecognised character 
+                encodedText.append(chars);
             }
         }
         this.encodedText = encodedText.toString();
