@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(69deg, #735DA5, #af83b9 50%, #D3C5E5);
+}
+
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  border: 3px solid white;
+  border-radius: 10px;
+  margin: 0.5rem;
+  background-color: white;
+}
+
+.header-label {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 2.5em;
+  padding: 0.25rem 0;
+  margin: 0.5rem;
+}
+
+.auth-inputfield {
+  background-color: white;
+  border-radius: 10px;
+  width: 20em;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
