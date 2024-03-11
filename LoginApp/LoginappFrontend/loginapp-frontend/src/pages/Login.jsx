@@ -9,7 +9,7 @@ export const Login = (props) => {
   const [password, setPassword] = useState("");
   const [hide, setHide] = useState(true);
   const [login, setLogin] = useState(false);
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState("");
   const navigate = useNavigate();
   const errMsg = "Incorrect user id or password.";
 
@@ -32,6 +32,7 @@ export const Login = (props) => {
   useEffect(() => {
     if (login === true) {
       navigate("/Home", { state: { userData } });
+      setUserData("");
     }
   }, [login, navigate, userData]);
 

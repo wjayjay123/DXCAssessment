@@ -27,6 +27,15 @@
   margin: 0.5rem;
 }
 
+.sub-label {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 0.25rem 0;
+  margin: 0.5rem;
+}
+
 .auth-inputfield {
   background-color: white;
   border-radius: 10px;
