@@ -13,6 +13,7 @@ public class Main {
         System.out.print("Select Option: ");
     }
 
+    // Function to print decode Menu
     private void getDecodeMenu() {
         System.out.println("--Decode previously encoded text?--");
         System.out.println("1. Yes");
@@ -42,7 +43,8 @@ public class Main {
                     String input = scanner.nextLine().toUpperCase();
                     try {
                         char offSet = input.charAt(0);
-                        String encodedText = encoder.encode(plainText, offSet);
+                        encoder.setOffSetChar(offSet);
+                        String encodedText = encoder.encode(plainText);
                         if (encodedText != offSetError) {
                             System.out.println("\nThe encoded text is: " + encodedText + "\n");
                         } else {
