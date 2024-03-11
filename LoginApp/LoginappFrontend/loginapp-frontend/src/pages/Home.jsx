@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -19,6 +18,11 @@ export const Home = () => {
           Welcome, {userData.name} ({userData.username})
         </label>
         <label className="sub-label">Role: {userData.role}</label>
+        {userData.role === "Manager" ? (
+          <a href="/Restricted" target="_blank">
+            Access restricted website
+          </a>
+        ) : null}
         <Button
           variant="contained"
           type="submit"
