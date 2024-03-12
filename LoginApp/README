@@ -5,3 +5,13 @@ To run the program:
 3. Navigate into /LoginappFrontend/loginapp-frontend
 4. Run npm install
 5. Run npm start
+
+Login credentials:
+
+Username: jduser
+Password: password123
+User role: User
+
+Username: mpuser
+Password: password456
+User role: Manager
