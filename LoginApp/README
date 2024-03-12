@@ -1,0 +1,7 @@
+To run the program:
+
+1. Navigate into /loginapp/java/com/wjayjay123/loginapp
+2. Run LoginappApplication.java
+3. Navigate into /LoginappFrontend/loginapp-frontend
+4. Run npm install
+5. Run npm start
