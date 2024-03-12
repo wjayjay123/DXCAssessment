@@ -4,8 +4,10 @@ import "../i18n.js";
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
+  const [lang, setLang] = useState("English");
 
   const handleLang = (e) => {
+    setLang(e.target.value);
     if (e.target.value === "English") {
       i18n.changeLanguage("en");
     } else {
@@ -14,7 +16,11 @@ const LanguageSelector = () => {
   };
 
   return (
-    <select className="lang-selector" onChange={handleLang}>
+    <select
+      className="lang-selector"
+      onChange={handleLang}
+      value={i18n.language === "en" ? "English" : "中文"}
+    >
       <option>English</option>
       <option>中文</option>
     </select>
