@@ -1,8 +1,10 @@
 import api from "../api/axiosConfig";
 import React, { useEffect, useState } from "react";
+import LanguageSelector from "../components/LanguageSelector.jsx";
 import { TextField } from "@mui/material";
 import { Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Login = (props) => {
   const [userId, setUserId] = useState("");
@@ -11,7 +13,7 @@ export const Login = (props) => {
   const [login, setLogin] = useState(false);
   const [userData, setUserData] = useState("");
   const navigate = useNavigate();
-  const errMsg = "Incorrect user id or password.";
+  const { t } = useTranslation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,11 +42,11 @@ export const Login = (props) => {
     <div className="App">
       <div className="auth-form-container">
         <form className="login-form" onSubmit={handleSubmit}>
-          <label className="header-label">Login</label>
+          <label className="header-label">{t("login")}</label>
           <TextField
             className="auth-inputfield"
             required
-            label="User ID"
+            label={t("userid")}
             defaultValue=""
             variant="outlined"
             onChange={(e) => setUserId(e.target.value)}
@@ -54,7 +56,7 @@ export const Login = (props) => {
           <TextField
             className="auth-inputfield"
             required
-            label="Password"
+            label={t("password")}
             type="password"
             defaultValue=""
             variant="outlined"
@@ -66,7 +68,7 @@ export const Login = (props) => {
             <Typography
               style={{ color: "red", fontSize: "small", textAlign: "center" }}
             >
-              {errMsg}
+              {t("autherr")}
             </Typography>
           )}
           <Button
@@ -83,8 +85,9 @@ export const Login = (props) => {
               width: "23em",
             }}
           >
-            Login
+            {t("login")}
           </Button>
+          <LanguageSelector />
         </form>
       </div>
     </div>

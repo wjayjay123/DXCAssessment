@@ -1,11 +1,14 @@
 import { Button } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../components/LanguageSelector";
 
 export const Home = () => {
   const location = useLocation();
   const userData = location.state.userData;
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleLogOut = () => {
     navigate("/");
@@ -15,12 +18,14 @@ export const Home = () => {
     <div className="App">
       <div className="auth-form-container">
         <label className="header-label">
-          Welcome, {userData.name} ({userData.username})
+          {t("welcome")}, {userData.name} ({userData.username})
         </label>
-        <label className="sub-label">Role: {userData.role}</label>
+        <label className="sub-label">
+          {t("role")}: {userData.role}
+        </label>
         {userData.role === "Manager" ? (
           <a href="/Restricted" target="_blank">
-            Access restricted website
+            {t("accRestrict")}
           </a>
         ) : null}
         <Button
@@ -38,8 +43,9 @@ export const Home = () => {
             width: "23em",
           }}
         >
-          Logout
+          {t("logout")}
         </Button>
+        <LanguageSelector />
       </div>
     </div>
   );
